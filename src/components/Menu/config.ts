@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://pancakeswap.finance/',
+    href: 'https://fervent-heisenberg-06b5b2.netlify.app/#/swap',
   },
   {
     label: 'Trade',
@@ -15,22 +15,22 @@ const config: MenuEntry[] = [
       color: 'warning',
     },
     items: [
-      {
-        label: 'LP Migration',
-        href: '/migrate',
-      },
+      // {
+      //   label: 'LP Migration',
+      //   href: '/migrate',
+      // },
       {
         label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance/#/swap',
+        href: 'https://fervent-heisenberg-06b5b2.netlify.app/#/swap',
       },
       {
         label: 'Liquidity',
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        href: 'https://fervent-heisenberg-06b5b2.netlify.app/#/pool',
       },
-      {
-        label: 'V1 Liquidity (Old)',
-        href: '/pool',
-      },
+      // {
+      //   label: 'V1 Liquidity (Old)',
+      //   href: '/pool',
+      // },
     ],
   },
   {

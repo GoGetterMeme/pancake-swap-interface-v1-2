@@ -3,7 +3,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { Credentials, StringTranslations } from '@crowdin/crowdin-api-client'
 import { LangType, useModal } from '@pancakeswap-libs/uikit'
-import VersionBar from 'components/VersionBar'
+// import VersionBar from 'components/VersionBar'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
@@ -13,12 +13,12 @@ import Pool from './Pool'
 import PoolFinder from './PoolFinder'
 import RemoveLiquidity from './RemoveLiquidity'
 import Swap from './Swap'
-import Migration from './Migration'
+// import Migration from './Migration'
 import { RedirectPathToSwapOnly } from './Swap/redirects'
 import { EN, allLanguages } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
-import UseV2ExchangeModal from '../components/UseV2ExchangeModal'
+// import UseV2ExchangeModal from '../components/UseV2ExchangeModal'
 
 import Menu from '../components/Menu'
 import useGetDocumentTitlePrice from '../hooks/useGetDocumentTitlePrice'
@@ -56,17 +56,16 @@ export default function App() {
   const stringTranslationsApi = new StringTranslations(credentials)
 
   const [hasSeenModal, setHasSeenModal] = useState(false)
-  const [onPresentUseV2ExchangeModal] = useModal(<UseV2ExchangeModal />)
 
-  useEffect(() => {
-    const showModal = () => {
-      onPresentUseV2ExchangeModal()
-      setHasSeenModal(true)
-    }
-    if (!hasSeenModal) {
-      showModal()
-    }
-  }, [onPresentUseV2ExchangeModal, hasSeenModal])
+  // useEffect(() => {
+  //   const showModal = () => {
+  //     onPresentUseV2ExchangeModal()
+  //     setHasSeenModal(true)
+  //   }
+  //   if (!hasSeenModal) {
+  //     showModal()
+  //   }
+  // // }, [onPresentUseV2ExchangeModal, hasSeenModal])
 
   const getStoredLang = (storedLangCode: string) => {
     return allLanguages.filter((language) => {
@@ -137,7 +136,7 @@ export default function App() {
                       <Route exact strict path="/find" component={PoolFinder} />
                       <Route exact strict path="/pool" component={Pool} />
                       <Route exact path="/add" component={AddLiquidity} />
-                      <Route exact path="/migrate" component={Migration} />
+                      {/* <Route exact path="/migrate" component={Migration} /> */}
                       <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
 
                       {/* Redirection: These old routes are still used in the code base */}
@@ -150,7 +149,7 @@ export default function App() {
                   </Web3ReactManager>
                 </BodyWrapper>
               </Menu>
-              <VersionBar />
+              {/* <VersionBar /> */}
             </TranslationsContext.Provider>
           </LanguageContext.Provider>
         </AppWrapper>
